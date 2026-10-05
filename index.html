@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday DiSHUU❤️</title>
+
+<style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 20% 10%, #7a1745 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #4b0b2c 0%, transparent 30%),
+        linear-gradient(135deg,#180008,#520021,#180008);
+
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.hidden{
+    display:none !important;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   GIFT SCREEN
+===================================================== */
+
+#giftScreen{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+#giftScreen h1{
+    font-size:clamp(38px,8vw,70px);
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ffd75c,
+            #ff9fc0,
+            #ffffff
+        );
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    margin-bottom:15px;
+}
+
+#giftScreen p{
+    color:#e7b4c7;
+    font-size:17px;
+    margin-bottom:35px;
+}
+
+
+/* =====================================================
+   3D GIFT
+===================================================== */
+
+.gift-container{
+    width:230px;
+    height:250px;
+    position:relative;
+    cursor:pointer;
+
+    perspective:800px;
+
+    animation:
+        giftFloat 2.5s ease-in-out infinite;
+}
+
+.gift-box{
+    position:absolute;
+
+    width:180px;
+    height:130px;
+
+    left:25px;
+    bottom:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff397b,
+            #8c003d
+        );
+
+    border-radius:8px;
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.5),
+        inset 0 0 20px rgba(255,255,255,.12);
+
+    transform-style:preserve-3d;
+
+    transition:1s;
+}
+
+
+/* vertical ribbon */
+
+.gift-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:30px;
+    height:100%;
+
+    left:75px;
+
+    background:#ffd75c;
+}
+
+
+/* horizontal ribbon */
+
+.gift-box::after{
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:25px;
+
+    top:50px;
+
+    background:#ffd75c;
+}
+
+
+/* gift lid */
+
+.gift-lid{
+    position:absolute;
+
+    width:200px;
+    height:40px;
+
+    left:15px;
+    bottom:150px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4a85,
+            #a00049
+        );
+
+    border-radius:8px;
+
+    z-index:5;
+
+    transition:
+        1s
+        cubic-bezier(.68,-.55,.27,1.55);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
+}
+
+
+/* lid ribbon */
+
+.gift-lid::after{
+    content:"";
+
+    position:absolute;
+
+    left:85px;
+
+    width:30px;
+    height:40px;
+
+    background:#ffd75c;
+}
+
+
+/* bow */
+
+.bow-left,
+.bow-right{
+    position:absolute;
+
+    width:60px;
+    height:45px;
+
+    border:8px solid #ffd75c;
+
+    border-radius:50%;
+
+    bottom:178px;
+
+    z-index:6;
+
+    transition:.8s;
+}
+
+.bow-left{
+    left:55px;
+    transform:rotate(-30deg);
+}
+
+.bow-right{
+    right:55px;
+    transform:rotate(30deg);
+}
+
+
+/* heart */
+
+.gift-heart{
+    position:absolute;
+
+    left:91px;
+    top:100px;
+
+    font-size:35px;
+
+    z-index:10;
+
+    animation:heartBeat 1.2s infinite;
+}
+
+
+/* opened gift */
+
+.gift-container.open .gift-lid{
+    transform:
+        translateY(-100px)
+        rotate(-12deg);
+}
+
+.gift-container.open .bow-left{
+    transform:
+        translate(-45px,-100px)
+        rotate(-40deg);
+}
+
+.gift-container.open .bow-right{
+    transform:
+        translate(45px,-100px)
+        rotate(40deg);
+}
+
+.gift-container.open .gift-box{
+    transform:rotateX(-5deg) scale(1.05);
+}
+
+
+.tap-text{
+    color:#ffd75c;
+
+    font-size:14px;
+
+    margin-top:10px;
+
+    animation:pulse 1.5s infinite;
+}
+
+
+/* =====================================================
+   COMMON SECTIONS
+===================================================== */
+
+.section{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:70px 20px;
+}
+
+.card{
+    width:min(900px,95%);
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid rgba(255,215,92,.25);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.4);
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+#welcome{
+    text-align:center;
+}
+
+#welcome h1{
+    font-size:
+        clamp(48px,10vw,100px);
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffd75c,
+            #ff9fc0
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+#welcome h2{
+    margin:20px 0;
+
+    font-size:
+        clamp(20px,4vw,32px);
+
+    color:#ffd1df;
+
+    font-weight:normal;
+}
+
+#welcome p{
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    color:#e8b8ca;
+
+    font-size:17px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.next-btn{
+
+    margin-top:30px;
+
+    padding:14px 28px;
+
+    border:0;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    color:#3b001c;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe48b,
+            #ffb7ce
+        );
+
+    box-shadow:
+        0 10px 30px rgba(255,190,210,.2);
+
+    transition:.3s;
+}
+
+.next-btn:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
+.section-title{
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.section-title small{
+    color:#ffd75c;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.section-title h2{
+
+    margin-top:10px;
+
+    font-size:
+        clamp(35px,6vw,55px);
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffd75c,
+            #ff9fc0
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+
+/* =====================================================
+   PHOTO CAROUSEL
+===================================================== */
+
+.photo-wrapper{
+    width:min(450px,100%);
+
+    margin:auto;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    border:
+        2px solid
+        rgba(255,215,92,.3);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+}
+
+.photo-wrapper img{
+
+    width:100%;
+
+    height:450px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s;
+}
+
+.photo-caption{
+
+    text-align:center;
+
+    color:#e8bdce;
+
+    margin:18px 0;
+}
+
+.carousel-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+}
+
+.carousel-buttons button{
+
+    width:45px;
+    height:45px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#ffd75c;
+
+    color:#39001a;
+
+    font-size:22px;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline{
+
+    position:relative;
+
+    max-width:700px;
+
+    margin:auto;
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:20px;
+
+    top:0;
+
+    bottom:0;
+
+    width:2px;
+
+    background:
+        linear-gradient(
+            #ffd75c,
+            transparent
+        );
+}
+
+.timeline-item{
+
+    position:relative;
+
+    padding-left:55px;
+
+    margin-bottom:25px;
+}
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:13px;
+
+    top:20px;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:#ffd75c;
+
+    box-shadow:
+        0 0 20px #ffd75c;
+}
+
+.timeline-content{
+
+    padding:22px;
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,215,92,.18);
+}
+
+.timeline-content h3{
+
+    color:#ffd75c;
+
+    margin-bottom:8px;
+}
+
+.timeline-content p{
+
+    color:#ddb0c2;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:35px;
+
+    border:
+        1px dashed
+        rgba(255,215,92,.5);
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.04);
+}
+
+.letter h3{
+
+    color:#ffd75c;
+
+    font-size:27px;
+
+    margin-bottom:20px;
+}
+
+#typedLetter{
+
+    color:#f0ccd9;
+
+    line-height:2;
+
+    white-space:pre-line;
+
+    font-size:17px;
+}
+
+.signature{
+
+    text-align:right;
+
+    margin-top:25px;
+
+    color:#ffd75c;
+
+    font-size:20px;
+}
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.music-button{
+
+    position:fixed;
+
+    right:20px;
+    top:20px;
+
+    z-index:1000;
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,215,92,.5);
+
+    background:
+        rgba(45,0,22,.85);
+
+    color:#ffd75c;
+
+    font-size:20px;
+
+    backdrop-filter:blur(10px);
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.floating-heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    font-size:20px;
+
+    opacity:.6;
+
+    pointer-events:none;
+
+    animation:
+        riseHeart 8s linear forwards;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes giftFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    25%{
+        transform:scale(1.15);
+    }
+
+    50%{
+        transform:scale(1);
+    }
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        opacity:.5;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+@keyframes riseHeart{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+/* =====================================================
+   BIG & POWERFUL FIREWORKS
+===================================================== */
+
+.firework{
+    position:fixed;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    box-shadow:
+        0 0 8px currentColor,
+        0 0 18px currentColor,
+        0 0 30px currentColor;
+
+    animation:
+        fireworkExplode 1.8s cubic-bezier(.1,.7,.2,1) forwards;
+}
+
+@keyframes fireworkExplode{
+
+    0%{
+        transform:
+            translate(0,0)
+            scale(1.8);
+
+        opacity:1;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    70%{
+        opacity:.9;
+    }
+
+    100%{
+        transform:
+            translate(
+                calc(var(--x) * 1px),
+                calc(var(--y) * 1px)
+            )
+            scale(.05);
+
+        opacity:0;
+    }
+}
+
+@keyframes fireworkExplode{
+
+    0%{
+        transform:translate(0,0) scale(1);
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translate(
+                calc(var(--x) * 1px),
+                calc(var(--y) * 1px)
+            )
+            scale(.2);
+        opacity:0;
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .card{
+        padding:25px 18px;
+    }
+
+    .photo-wrapper img{
+        height:330px;
+    }
+
+    .gift-container{
+        transform:scale(.9);
+    }
+
+    .gift-container:hover{
+        transform:scale(.95);
+    }
+
+    .letter{
+        padding:25px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ===================================================
+     MUSIC
+=================================================== -->
+
+<button
+    class="music-button"
+    onclick="toggleMusic()"
+    id="musicButton">
+    🎵
+</button>
+
+<audio id="birthdayMusic" loop>
+
+    <!--
+       IMPORTANT:
+
+       Agar music add karna hai to apni MP3 ka
+       naam birthday.mp3 rakho aur isi HTML file
+       ke paas music folder mein rakho.
+
+       Folder:
+       music/birthday.mp3
+    -->
+
+    <source
+        src="music/birthday.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<!-- ===================================================
+     1. GIFT SCREEN
+=================================================== -->
+
+<section id="giftScreen">
+
+    <h1>A Special Surprise for my baacchhaa 🎁</h1>
+
+    <p>
+        I poured my heart into making this for uhhh. I truly hope uhh love it ❤️
+    </p>
+
+
+    <div
+        class="gift-container"
+        id="gift"
+        onclick="openGift()">
+
+        <div class="bow-left"></div>
+
+        <div class="bow-right"></div>
+
+        <div class="gift-lid"></div>
+
+        <div class="gift-box"></div>
+
+        <div class="gift-heart">
+            ❤️
+        </div>
+
+    </div>
+
+
+    <div class="tap-text">
+        ✨ Tap the gift to open ✨
+    </div>
+
+</section>
+
+
+<!-- ===================================================
+     2. BIRTHDAY WELCOME
+=================================================== -->
+
+<section
+    id="welcome"
+    class="section hidden">
+
+    <div class="card">
+
+        <h2>
+            Happy Birthday Betuuu ❤️
+        </h2>
+
+        <h2>
+            
+            You are the one who quietly lives in my heart, yet somehow occupies every little corner of my thoughts. ✨
+        </h2>
+
+        <p>
+
+            On this beautiful day, I just want you to know how incredibly special you are to me. Loving you has made even the simplest moments feel magical. Every smile of yours, every little conversation, every silly moment we share has become a precious memory that I never want to lose. You have a way of making my ordinary days feel extraordinary, simply by being a part of them. 💕
+
+            <br><br>
+
+          If I could give you one gift today, I wouldn't give you anything wrapped in ribbons or placed inside a box. I'd give you the chance to see yourself through my eyes — just for a moment — so you could see how beautiful, precious, and irreplaceable you truly are to me. Because sometimes, I don't think you realize just how much you mean to my heart. 🥹❤️
+<br><br>
+I want to be there for all of it — your happiest smiles, your silly little moments, your difficult days, your biggest dreams, and even the tiny victories that no one else notices. I want to keep making memories with you, keep annoying you, keep laughing with you, and keep choosing you… again and again, in every version of our tomorrow. 🫶🏻
+
+            <br><br>
+You are not just a beautiful part of my life… you are one of the most beautiful reasons I love my life. And if I had to choose again, in every lifetime, I'd still find my way back to you. 💖
+<br><br>
+Today is your day, but honestly… having you in my life feels like a gift to me every single day. 💗✨
+            
+
+        </p>
+
+
+        <button
+            class="next-btn"
+            onclick="showSection('memories')">
+
+            See Our Memories 📸 →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================
+     3. PHOTO MEMORIES
+=================================================== -->
+
+<section
+    id="memories"
+    class="section hidden">
+
+    <div class="card">
+
+        <div class="section-title">
+
+            <small>
+                Our Memories
+            </small>
+
+            <h2>
+                📸 Beautiful Moments
+            </h2>
+
+        </div>
+
+
+        <div class="photo-wrapper">
+
+            <img
+                id="memoryPhoto"
+                src="61328.webp"
+                alt="Memory">
+
+        </div>
+
+
+        <div
+            class="photo-caption"
+            id="photoCaption">
+
+            our beautiful memory ❤️
+
+        </div>
+
+
+        <div class="carousel-buttons">
+
+            <button
+                onclick="previousPhoto()">
+                ‹
+            </button>
+
+            <button
+                onclick="nextPhoto()">
+                ›
+            </button>
+
+        </div>
+
+
+        <div style="text-align:center">
+
+            <button
+                class="next-btn"
+                onclick="showSection('story')">
+
+                Our Story 💕 →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================
+     4. OUR STORY / TIMELINE
+=================================================== -->
+
+<section
+    id="story"
+    class="section hidden">
+
+    <div class="card">
+
+        <div class="section-title">
+
+            <small>
+                Our Journey
+            </small>
+
+            <h2>
+                💕 Our Story
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        The Beginning 💗
+                    </h3>
+
+                    <p>
+
+                        The moment our eyes met, I never imagined that one little moment would become one of the most beautiful chapters of my life. Somehow, without even realizing it, you slowly became someone my heart never wanted to let go of 💕.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Our Memories ✨
+                    </h3>
+
+                    <p>
+
+                       Every laugh, every late-night conversation, every silly moment and every little adventure with you has found a special place in my heart. With you, even the simplest moments feel magical, and every memory becomes something I want to keep forever  ❤️.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Today & Always 💖
+                    </h3>
+
+                    <p>
+
+                        Today, as we create another beautiful memory together, I just want you to know that I don't only want you in my today—I want you in all my tomorrows. No matter where life takes us, I hope we keep choosing each other, loving each other, and creating a forever full of beautiful moments 💌.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div style="text-align:center">
+
+            <button
+                class="next-btn"
+                onclick="showSection('letter')">
+
+                Read My Letter 💌 →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================
+     5. TYPING LETTER
+=================================================== -->
+
+<section
+    id="letter"
+    class="section hidden">
+
+    <div class="card">
+
+        <div class="section-title">
+
+            <small>
+                Happy birthday to the
+            </small>
+
+            <h2>
+                 Ruler Of My Heart 💌 
+            </h2>
+
+        </div>
+
+
+        <div class="letter">
+
+            <h3>
+                Hpyy brthdyy wifeyy 💗,
+            </h3>
+
+
+            <div id="typedLetter"></div>
+
+
+            <div class="signature">
+
+                I Love Uhhh Endlesslyy...💕
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =====================================================
+   GIFT OPENING
+===================================================== */
+
+function openGift(){
+
+    const gift =
+        document.getElementById("gift");
+
+    gift.classList.add("open");
+
+startFireworks();
+
+    /* Start music */
+
+    const music =
+        document.getElementById("birthdayMusic");
+
+    music.play().catch(function(){
+
+        /*
+           Browser autoplay restrictions ke
+           wajah se agar music na chale to
+           music button se manually start kar sakte ho.
+        */
+
+    });
+
+
+    /* Create floating hearts */
+
+    createHearts();
+
+
+    /* Open birthday page */
+
+    setTimeout(function(){
+
+        document
+            .getElementById("giftScreen")
+            .classList.add("hidden");
+
+
+        document
+            .getElementById("welcome")
+            .classList.remove("hidden");
+
+
+        window.scrollTo(0,0);
+
+    },1000);
+
+}
+
+
+/* =====================================================
+   SECTION NAVIGATION
+===================================================== */
+
+function showSection(sectionId){
+
+    const sections =
+        document.querySelectorAll(".section");
+
+
+    sections.forEach(function(section){
+
+        section.classList.add("hidden");
+
+    });
+
+
+    document
+        .getElementById(sectionId)
+        .classList.remove("hidden");
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+
+    if(sectionId === "letter"){
+
+        startTyping();
+startFireworks();
+    }
+
+}
+
+
+/* =====================================================
+   PHOTO CAROUSEL
+===================================================== */
+
+
+/*
+   YAHAN APNI PHOTOS KE NAAM LIKHNA.
+
+   Example:
+
+   images/photo1.jpg
+   images/photo2.jpg
+   images/photo3.jpg
+*/
+
+const photos = [
+
+    {
+        src:"images/photo1.jpg",
+        caption:"The beginning of a beautiful story ❤️"
+    },
+
+    {
+        src:"images/photo2.jpg",
+        caption:"One of my favourite memories 💕"
+    },
+
+    {
+        src:"images/photo3.jpg",
+        caption:"A moment I'll always remember ✨"
+    },
+
+    {
+        src:"images/photo4.jpg",
+        caption:"Another beautiful memory 💖"
+    }
+
+];
+
+
+let currentPhoto = 0;
+
+
+function showPhoto(){
+
+    const image =
+        document.getElementById("memoryPhoto");
+
+    const caption =
+        document.getElementById("photoCaption");
+
+
+    image.style.opacity = "0";
+
+
+    setTimeout(function(){
+
+        image.src =
+            photos[currentPhoto].src;
+
+        caption.textContent =
+            photos[currentPhoto].caption;
+
+        image.style.opacity = "1";
+
+    },200);
+
+}
+
+
+function nextPhoto(){
+
+    currentPhoto++;
+
+
+    if(currentPhoto >= photos.length){
+
+        currentPhoto = 0;
+
+    }
+
+
+    showPhoto();
+
+}
+
+
+function previousPhoto(){
+
+    currentPhoto--;
+
+
+    if(currentPhoto < 0){
+
+        currentPhoto =
+            photos.length - 1;
+
+    }
+
+
+    showPhoto();
+
+}
+
+
+/* =====================================================
+   TYPING LETTER
+===================================================== */
+
+const letterText = `
+To the love of my life . I don't even know where to begin because words will never be enough to express how much  uhh mean to me. Falling in love with uhh was the most unexpected, yet the most perfect thing that has ever happened to me. You've brought light into my world in ways I didn't know were possible.
+
+You are my whole world, my bacha, uhh are the most beautiful soul I have ever known. Every single day with you feels like a beautiful dream come true, and I am so deeply grateful to love you and be loved by you. You bring an unmatched warmth, peace, and pure joy into my life, jaan
+
+FROM THE MOMENT YOU WALKED INTO MY LIFE . Uhh BECAME THE CENTER OF MY UNIVERSE .THE SOURCE OF MY JOY .AND THE REASON FOR MY SMILE . WITH EACH PASSING DAY. MY LOVE FOR YOU GROWS DEEPER. STRONGER, AND MORE PROFOUND AND,
+YOUR PRESENCE FILLS MY HEART WITH HAPPINESS . YOUR TOUCH IGNITES MY SOUL WITH PASSION AND YOUR LOVE ENVELOPS ME IN A WARM EMBRACE THAT COMFORTS AND REASSURES ME IN THE DARKEST OF TIMES 💖
+
+I wish too spend more coming birthdays with you and to be a part of your life. You are my world and I never want to lose you, you'll never have to worry about me cheating or leaving you because you are the only one my everything , Thank you for loving me for who I am. Thank you for making me laugh and smile when I'm sad or have a bad day. I still get excited when I see your photo in my phone And, 
+Tq for accepting me with all my up and downs but we never gave up on each other and making me feel happy. You are the best person in my life. I feel so lucky to have you as my life partner. And i am sooo Hpy u came into my life
+
+Remember, this distance is only temporary — because no mile could ever be strong enough to come between two hearts that truly belong to each other.Distance may keep my arms from holding you today, but it can never keep my heart from being close to yours. On your special day, I just want you to know how deeply, endlessly, and genuinely you are loved. Every moment with you, every little memory, and every conversation feels like a precious piece of my heart. Having you in my life is a blessing I’ll cherish forever, and no matter how many miles separate us, my heart will always find its way back to you. ❤️‍🩹✨
+
+`;
+
+
+let typingStarted = false;
+
+
+function startTyping(){
+
+    if(typingStarted){
+
+        return;
+
+    }
+
+
+    typingStarted = true;
+
+
+    const element =
+        document.getElementById("typedLetter");
+
+
+    let index = 0;
+
+
+    function type(){
+
+        if(index < letterText.length){
+
+            element.textContent +=
+                letterText.charAt(index);
+
+
+            index++;
+
+
+            setTimeout(type,35);
+
+        }
+
+    }
+
+
+    type();
+
+}
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+let musicPlaying = false;
+
+
+function toggleMusic(){
+
+    const music =
+        document.getElementById("birthdayMusic");
+
+    const button =
+        document.getElementById("musicButton");
+
+
+    if(musicPlaying){
+
+        music.pause();
+
+        musicPlaying = false;
+
+        button.textContent = "🎵";
+
+    }
+
+    else{
+
+        music.play().then(function(){
+
+            musicPlaying = true;
+
+            button.textContent = "🔊";
+
+        }).catch(function(){
+
+            alert(
+                "Music file nahi mili.\n\n" +
+                "Check karo:\n" +
+                "music/birthday.mp3"
+            );
+
+        });
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+function createHearts(){
+
+    for(let i=0;i<15;i++){
+
+        const heart =
+            document.createElement("div");
+
+
+        heart.className =
+            "floating-heart";
+
+
+        heart.textContent =
+            ["❤️","💕","💖","✨"][
+                Math.floor(
+                    Math.random()*4
+                )
+            ];
+
+
+        heart.style.left =
+            Math.random()*100 + "%";
+
+
+        heart.style.animationDuration =
+            (5 + Math.random()*5) + "s";
+
+
+        heart.style.animationDelay =
+            Math.random()*2 + "s";
+
+
+        document.body.appendChild(heart);
+
+
+        setTimeout(function(){
+
+            heart.remove();
+
+        },10000);
+
+    }
+
+}
+
+/* =====================================================
+   BIG FIREWORKS
+===================================================== */
+
+function createFirework(){
+
+    const centerX =
+        80 + Math.random() * (window.innerWidth - 160);
+
+    const centerY =
+        80 + Math.random() * (window.innerHeight * 0.55);
+
+    const colors = [
+        "#ffd75c",
+        "#ff4a85",
+        "#ffffff",
+        "#ff9fc0",
+        "#ff66cc",
+        "#ffcf4a",
+        "#ff75b5"
+    ];
+
+    /* BIG explosion */
+
+    const particles = 90;
+
+    for(let i = 0; i < particles; i++){
+
+        const firework =
+            document.createElement("div");
+
+        firework.className = "firework";
+
+        firework.style.left =
+            centerX + "px";
+
+        firework.style.top =
+            centerY + "px";
+
+        const angle =
+            Math.random() * Math.PI * 2;
+
+        /*
+           Bigger explosion distance
+        */
+
+        const distance =
+            130 + Math.random() * 190;
+
+        firework.style.setProperty(
+            "--x",
+            Math.cos(angle) * distance
+        );
+
+        firework.style.setProperty(
+            "--y",
+            Math.sin(angle) * distance
+        );
+
+        const color =
+            colors[
+                Math.floor(
+                    Math.random() * colors.length
+                )
+            ];
+
+        firework.style.background = color;
+        firework.style.color = color;
+
+        /*
+           Different particle sizes
+        */
+
+        const size =
+            5 + Math.random() * 6;
+
+        firework.style.width =
+            size + "px";
+
+        firework.style.height =
+            size + "px";
+
+        /*
+           Slightly different timing
+        */
+
+        firework.style.animationDuration =
+            (1.5 + Math.random() * .8) + "s";
+
+        document.body.appendChild(firework);
+
+        setTimeout(function(){
+
+            firework.remove();
+
+        },2500);
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUOUS BIG FIREWORK SHOW
+===================================================== */
+
+let fireworksRunning = false;
+
+function startFireworks(){
+
+    if(fireworksRunning){
+        return;
+    }
+
+    fireworksRunning = true;
+
+    /*
+       Initial BIG BURST
+    */
+
+    createFirework();
+
+    setTimeout(function(){
+        createFirework();
+    },300);
+
+    setTimeout(function(){
+        createFirework();
+    },650);
+
+    setTimeout(function(){
+        createFirework();
+    },1000);
+
+    /*
+       Continuous fireworks
+    */
+
+    setInterval(function(){
+
+        createFirework();
+
+    },1400);
+
+}
+
+</script>
+
+</body>
+</html>
